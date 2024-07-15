@@ -1,0 +1,17 @@
+<div class="chart-container">
+    <div class="content">
+        <span>Leader Board</span>
+        <canvas id="MyChart" >{{ chart }}</canvas>
+        <div class="radio">
+            <label>
+              <input type="radio" name="dataType" value="total" [(ngModel)]="selectedDataType" (change)="updateChart()"> Total wealth
+            </label>
+            <label>
+              <input type="radio" name="dataType" value="propertyValue" [(ngModel)]="selectedDataType" (change)="updateChart()"> Property only
+            </label>
+            <label>
+              <input type="radio" name="dataType" value="money" [(ngModel)]="selectedDataType" (change)="updateChart()"> Cash only
+            </label>
+          </div>
+    </div>
+</div>

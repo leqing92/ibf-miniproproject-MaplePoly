@@ -1,0 +1,23 @@
+.chart-container{
+    background-color: whitesmoke;
+    background-image: url("../../../assets/gamebackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 32px;
+    box-shadow: 0px 0px 20px 5px;
+}
+
+.content {
+    backdrop-filter: blur(6px);
+    height: 100%;
+    width: 100%;
+}
+.radio{
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+}

@@ -1,0 +1,55 @@
+<div class="menu-container" (click)="toggleMenu()" >
+    <button class="menu-button" *ngIf="!isMoving">
+      <mat-icon *ngIf="!isMenuOpen" fontIcon="open_with" matTooltip="Open Menu"></mat-icon>
+      <mat-icon *ngIf="isMenuOpen" fontIcon="close" matTooltip="Close Menu"></mat-icon>
+    </button>
+    <div class="circle-menu" [ngClass]="{'active': isMenuOpen}" (click)="toggleMenu()" *ngIf="!isMoving">
+
+        <button mat-mini-fab type="button" class="circle-button btn1" matTooltip="Roll Dice" (click)="rollDice()" [disabled]="hasMoved || hasBankrupted">
+        <!-- <button mat-mini-fab type="button" class="circle-button btn1" matTooltip="Roll Dice" (click)="rollDice()" [disabled]="isMoving"> -->
+            <mat-icon fontIcon="casino" *ngIf="!isMoving"></mat-icon>    
+        </button>
+
+        <button mat-mini-fab type="button" class="circle-button btn2" matTooltip="Buy" (click)="buyProperty()" [disabled]="!canBuy || hasBankrupted">
+            <mat-icon fontIcon="add_home_work"></mat-icon>
+        </button>
+
+        <button class="circle-button btn3" matTooltip="Leader Board" (click)="openLeaderBoard()">
+            <mat-icon fontIcon="leaderboard"></mat-icon>
+        </button>
+
+        <button class="circle-button btn4" matTooltip="Trade" (click)="openTrade()">
+            <mat-icon fontIcon="balance"></mat-icon>
+        </button>
+
+        <!-- <button  mat-mini-fab class="circle-button btn5" matTooltip="End turn" [disabled]="!hasMoved"> -->
+        <button  mat-mini-fab class="circle-button btn5" matTooltip="End turn" (click)="completeTurn()" [disabled]="!hasMoved || endTurn">
+            <mat-icon fontIcon="exit_to_app"></mat-icon>
+        </button>
+
+        <button mat-mini-fab class="circle-button btn6" matTooltip="Surrender" (click)="surrender()" [disabled]="hasBankrupted">
+            <mat-icon fontIcon="flag"></mat-icon>
+        </button>
+
+        <button class="circle-button btn7" matTooltip="Inventory">
+            <mat-icon fontIcon="shopping_bag"></mat-icon>
+        </button>
+        
+        <button mat-mini-fab class="circle-button btn8" matTooltip="Build" (click)="build()" [disabled]="!canBuild">
+            <mat-icon fontIcon="construction"></mat-icon>
+        </button>
+
+            <svg class="lines" *ngIf="isMenuOpen">
+            <line class="line1" [class.disabled]="hasMoved" x1="50%" y1="10%" x2="50%" y2="50%"/>
+            <line class="line2" [class.disabled]="!canBuy" x1="78%" y1="27%" x2="50%" y2="50%"/>
+            <line class="line3" x1="100%" y1="50%" x2="50%" y2="50%"/>
+            <line class="line4" x1="85%" y1="80%" x2="50%" y2="50%"/>
+            <line class="line5" [class.disabled]="!isMoving" x1="50%" y1="90%" x2="50%" y2="50%"/>
+            <line class="line6" [class.disabled]="hasBankrupted" x1="22%" y1="75%" x2="50%" y2="50%"/>
+            <line class="line7" x1="0%" y1="50%" x2="50%" y2="50%"/>
+            <line class="line8" [class.disabled]="!canBuild" x1="22%" y1="27%" x2="50%" y2="50%"/>
+            </svg>
+    </div>    
+    <br>
+    <div *ngIf="isMoving" class="dice">{{ move }}</div>
+ </div>

@@ -1,0 +1,80 @@
+body{    
+    background-image: url("../../../assets/gamecenterbackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-mdc-form-field {
+    margin-top: 12px;
+    font-size: 14px;
+    width: 100%;
+}
+
+h1{
+    font-size: 80px;
+    font-weight: 900;
+    color: tomato;
+    text-align: center;
+    
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: white;
+    --stroke-color: lightblue;
+    
+    text-shadow: 
+    
+    var(--x-offset)
+    var(--y-offset)
+    0px
+    var(--background-color), 
+    
+    calc( var(--x-offset) - var(--stroke) )
+    calc( var(--y-offset) + var(--stroke) )
+    0px
+    var(--stroke-color);
+}
+
+.create-button{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 3px;
+    
+}
+.create-button button{
+    background-color: blue;
+    color: white;
+}
+
+.create-button:hover button{
+    filter: drop-shadow(0 0 10px #fffdef); 
+}
+
+.table-container{
+    width: 800px;
+}
+
+.mat-mdc-header-row {
+    background: gray;
+}
+
+.mat-mdc-row {
+    background: lightgray;
+    color: black;
+}
+
+::ng-deep .hide-arrow .mat-sort-header-arrow {
+    color: greenyellow;    
+}
+
+.mat-mdc-paginator {
+    color: black;
+    background-color: gray;
+}
+
+.mat-mdc-icon-button{
+    color: black;
+}

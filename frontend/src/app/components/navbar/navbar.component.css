@@ -1,0 +1,75 @@
+.navbar{
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  height: fit-content;
+  min-width: 100%;  
+}
+  
+span{
+  padding-right: 1rem;
+}
+
+mat-menu {
+  background-color: black;
+  color: white;  
+}
+
+.mat-menu-button{
+  width: 100%;
+  margin-bottom: 6px;
+  display: flex;  
+  justify-content: left;
+}
+
+.navbar-button{
+  display: flex;  
+  align-items: center;
+  justify-content:flex-end;
+}
+
+#sponsor{
+  background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs5NTl3Y21hazV4Z2s0NW9mZXFpZzdqczN4bnAya3JhZGI1OWV1NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jgEux87ScUhijygVm7/giphy.gif') no-repeat;
+  border: 1px solid gold
+}
+
+#sponsor:hover{
+  filter: drop-shadow(0 0 10px yellow);
+  /* For browser compatibility */
+  -webkit-filter: drop-shadow(yellow 0 0 10px);
+  -moz-filter: drop-shadow(0 0 10px yellow);
+  -o-filter: drop-shadow(0 0 10px yellow);
+  -ms-filter: drop-shadow(0 0 10px yellow);  
+}
+
+#gamecenter{
+  background-color: blue;
+  margin-right: 6px;
+  margin-left: 12px;
+}
+
+#backtogame{
+  background-color: green;
+  margin-right: 6px;
+  margin-left: 12px;
+}
+
+#login{
+  background-color: green; 
+  margin-left: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;  
+}
+
+#username{
+  margin-bottom: 3px;
+  text-align: center;
+  color: white;
+}
+
+#logout{
+  background-color: red; 
+  width: 100%;
+  display: flex;  
+  justify-content: left;
+}

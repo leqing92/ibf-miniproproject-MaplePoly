@@ -1,0 +1,160 @@
+<div class="navbar">
+    <app-navbar>
+        <!-- at navbar there specified .audio-content to select this else cannot and dont know why -->
+        <span class="audio-content">
+            <audio #audio controls muted loop>
+                <source src="../../../assets/ChewChewMainTheme.mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+    </app-navbar>
+</div>
+<body>
+    <div class="game-container">
+        <aside class="left-side" *ngIf="characters.length > 0">
+
+            <div class="card-container" *ngFor="let playerState of playerStates.slice(0, playerStates.length / 2); let i = index">                
+                <img *ngIf="!this.playerState.hasBankrupted" [src]="characters[i].url" [class.special]="playerState.endTurn">
+                <img *ngIf="this.playerState.hasBankrupted" [src]="characters[i].dieUrl" [class.special]="playerState.endTurn">
+                <div class="text-container">
+                    <div><strong>{{playerState.name}}</strong></div>
+                    <div>${{playerState.money}}</div>
+                    <div>at tile no.{{playerState.position}}</div>
+                </div>                
+            </div>
+
+            <div class="msg-container" #messageList>
+                <div *ngFor="let msg of messages" class="msg">
+                    <div><strong>{{ msg.sender }}</strong>: </div>
+                    <div class="msg-body">
+                        <span [innerHTML]="msg.content"></span>
+                        <span class="timestamp">{{ msg.timestamp | date: 'hh:mm' }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <form [formGroup]="msgForm" (ngSubmit)="sendmsg()" class="chat-input">
+                <mat-form-field appearance="fill">
+                  <input matInput type="text" formControlName="msg" placeholder="Message here...." color="danger">
+                  <mat-hint *ngIf="msgForm.get('msg')?.hasError('maxlength')" style="color: red;">max. character allow 250 only</mat-hint>
+                  <span matSuffix>
+                    <mat-icon mat-mini-fab (click)="openBottomSheet()">sentiment_very_satisfied</mat-icon>
+                    </span>
+                </mat-form-field>
+                <!-- with this cannot work, not sure why -->
+                    <!-- <button type="submit" [disabled]="msgForm.invalid">
+                        <mat-icon mat-mini-fab>reply</mat-icon>
+                    </button> -->
+            </form>
+
+        </aside>
+        <div class="board">
+            <app-board *ngIf="characters.length > 0 && properties" [properties]="properties" [characters]="characters">
+                <ng-container *ngFor="let player of playerStates; let i = index">
+                    <app-character 
+                        [character]="characters[i]"
+                        [style.top]="characterPositions[player.name].top" 
+                        [style.left]="characterPositions[player.name].left"
+                        [playstate]="chacState[player.name]"
+                        [ngStyle]="getCharacterStyle(player.name)"
+                        [matTooltip]="player.name"
+                        matTooltipPositionAtOrigin="true"
+                    ></app-character>
+                </ng-container>
+                <app-game-function
+                    [gid]="gid"
+                    [player]="username"
+                    [move]="steps[username]"
+                    [isMoving]="isMoving[username]"
+                    [properties]="properties"
+                    draggable="true"
+                    (dragstart)="onDragStart($event)"
+                    (dragend)="onDragEnd($event)"
+                    >
+                </app-game-function>
+            </app-board>
+        </div>
+
+        <aside class="right-side" *ngIf="characters.length > 0">
+            
+            <div class="card-container" *ngFor="let playerState of playerStates.slice(playerStates.length / 2); let i = index">                
+                <img *ngIf="!this.playerState.hasBankrupted" [src]="characters[i + offset].url" [class.special]="playerState.endTurn">
+                <img *ngIf="this.playerState.hasBankrupted" [src]="characters[i + offset].dieUrl" [class.special]="playerState.endTurn">
+                <div class="text-container">
+                    <div><strong>{{playerState.name}}</strong></div>
+                    <div>${{playerState.money}}</div>
+                    <div>at tile no.{{playerState.position}}</div>
+                </div>                
+            </div>
+
+            <h2>Battle Log</h2>
+            <div class="battlelog-container" #battlelogList>
+                <div *ngFor="let msg of battlelogs" class="msg">
+                    <div class="msg-body">
+                        <span [innerHTML]="msg.content"></span>
+                        <span class="timestamp"> {{ msg.timestamp | date: 'hh:mm' }}</span>
+                    </div>
+                </div> 
+            </div>
+        </aside>
+    </div>
+</body>
+
+
+<!-- <app-navbar></app-navbar>
+<body>
+    <div class="game-container">
+        <div class="board">
+            <app-board *ngIf="characters.length > 0 && properties" [properties]="properties">
+                <ng-container *ngFor="let player of playerStates; let i = index">
+                    <app-character 
+                        [character]="characters[i]"
+                        [style.top]="characterPositions[player.name].top" 
+                        [style.left]="characterPositions[player.name].left"
+                        [playstate]="isMoving[player.name] ? 'run' : 'idle'"
+                        [ngStyle]="getCharacterStyle(player.name)"
+                        [matTooltip]="player.name"
+                        matTooltipPositionAtOrigin="true"
+                    ></app-character>
+                </ng-container>
+                <app-game-function
+                    [gid]="gid"
+                    [player]="username"
+                    [move]="steps[username]"
+                    [isMoving]="isMoving[username]"
+                    [properties]="properties"
+                    >
+                </app-game-function>
+            </app-board>
+        </div>
+        <aside *ngIf="characters.length > 0">
+            <div class="card-container" *ngFor="let playerState of playerStates; let i = index">
+                <div class="card">
+                    <img [src]="characters[i].url">
+                    <div>
+                        <h2>{{playerState.name}}</h2>
+                        <h4>${{playerState.money}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="battlelog-container">
+                <h2>Battle Log</h2>
+                <table *ngIf="messages ; else nomsg" border="1">
+                    <ng-container *ngFor="let msg of messages">
+                        
+                        <tr>
+                          <td>{{ msg.timestamp | date: 'hh:mm:ss' }} <strong>{{ msg.sender }}</strong> :</td>                      
+                        </tr>
+                        
+                        <tr>
+                          <td colspan="2" [innerHTML]="msg.content"></td>
+                        </tr>
+                      </ng-container>
+                </table>
+                <ng-template #nomsg>
+                    <p>no battle log...</p>
+                </ng-template>
+            </div>
+        </aside>
+    </div>
+</body> -->

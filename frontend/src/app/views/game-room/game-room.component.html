@@ -1,0 +1,113 @@
+<app-navbar></app-navbar>
+<body>
+  <div class="game-setup">
+    <br>
+    <h1>Game Room</h1>    
+    <form [formGroup]="gameSetupForm" (ngSubmit)="startGame()"> 
+      <div class="setup-container">
+        <!-- table section -->
+        <div class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Character</th>          
+              </tr>
+            </thead>
+            <tbody formArrayName="players">
+              <tr *ngFor="let playerControl of players.controls; let i = index" [formGroupName]="i">
+                <th>{{ i + 1 }}</th>
+                <td>
+                  <input type="text" formControlName="name" readonly class="transparent">
+                </td>
+                <td>            
+                  <input type="text" formControlName="character" readonly class="transparent">            
+                </td>          
+              </tr>
+            </tbody>
+            <tr><th colspan="3">Game detail</th></tr>
+            <tr>
+              <th colspan="2" class="detail">Dice no. :</th>
+              <td>
+                <input type="number" formControlName="diceNo" max="3" min="1" step="1" [readOnly]="!isOwner" 
+                  class="full-width center" [ngClass]="{'transparent': !isOwner}"
+                  matTooltip="Between 1~3">
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2" class="detail">Initial fund :</th>
+              <td>
+                <input type="number" formControlName="fund" max="5000" min="500" step="500" [readOnly]="!isOwner" 
+                  class="full-width center" [ngClass]="{'transparent': !isOwner}"
+                  matTooltip="Between 500~5000">
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2" class="detail">Salary :</th>
+              <td>
+                <input type="number" formControlName="salary" max="1000" min="100" step="100" [readOnly]="!isOwner" 
+                  class="full-width center" [ngClass]="{'transparent': !isOwner}"
+                  matTooltip="Between 100~1000">
+              </td>
+            </tr>
+          </table>
+        </div>
+  
+        <!-- character selection section -->
+         <div>
+           <h2>Choose your character</h2>
+           <div class="character-selection">
+             <div class="character-images">
+               <span *ngFor="let character of availableCharacters" class="character">
+                 <img [src]="character.url" (click)="selectCharacter(character)" [alt]="character.name" matTooltip="{{character.name}}">
+               </span>
+             </div>
+           </div>
+         </div>
+      </div>
+  
+      <!-- buttons section -->
+      <div class="buttons-section">
+        <div *ngIf="isOwner; else canQuit">
+          <button mat-flat-button color="primary" type="button" (click)="deleteGame()">Cancel</button>
+          <button mat-flat-button type="submit" 
+            [disabled]="!gameSetupForm.valid"            
+            [ngStyle]="{'background-color': gameSetupForm.valid ? 'blue' : 'lightblue'}">Start Game</button>
+        </div>
+        <div>
+          <ng-template #canQuit>
+            <button mat-flat-button color="primary" type="button" (click)="quitGame()" >Leave Game Room</button>
+          </ng-template>
+        </div>
+      </div>  
+    </form>
+  </div>
+  
+  <!-- message box -->
+  <div class="msg-container">
+    <!-- <p>Messages</p> -->
+    <ul #messageList class="message-list">
+      <li *ngFor="let message of messages">
+        <span [innerHTML]="message.content"></span>
+        <span class="timestamp">{{ message.timestamp | date:'hh:mm' }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- msg input  -->
+  <div class="form-container">
+    <form [formGroup]="msgForm" (ngSubmit)="sendmsg()" >
+      <mat-form-field class="full-width" appearance="fill">
+        <input matInput type="text" formControlName="msg" placeholder="Type your message here" color="danger">
+        <mat-hint *ngIf="msgForm.get('msg')?.hasError('maxlength')" style="color: red;">max. character allow 250 only</mat-hint>
+        <span matSuffix>            
+          <mat-icon (click)="openBottomSheet()">sentiment_very_satisfied</mat-icon>
+          <button mat-icon-button color="primary" type="submit" [disabled]="msgForm.invalid">
+            <mat-icon>reply</mat-icon>
+          </button>
+        </span>
+      </mat-form-field>
+    </form>
+  </div>  
+</body>

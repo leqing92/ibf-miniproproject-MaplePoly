@@ -1,0 +1,50 @@
+body{
+    background-image: url("../../../assets/welcome.png");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: bottom;
+    min-width: 400px;
+}
+
+mat-card{    
+    padding: 0px 25px;
+}
+
+mat-card-title{
+    color: white;
+    margin: 6px 0px;
+}
+
+mat-hint{
+    color: red;
+    text-align: center;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin-top: 15px;    
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.full-width{
+    width : 100%;
+}
+
+#signin{
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 10px;
+    margin: 0px 0px 10px 0px;    
+    color: white;
+    font-weight: bolder;
+}
+

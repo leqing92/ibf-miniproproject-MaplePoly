@@ -1,0 +1,152 @@
+audio {
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.navbar {    
+    min-width: 1240px;
+}
+
+body{
+    background-image: url("../../../assets/gamebackground.png");
+    background-size: cover;
+    background-position: bottom;
+    min-height: 840px;
+    min-width: 1240px;
+    display: flex;
+    justify-content: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1px;
+}
+
+.left-side, .right-side {
+    width: 20%;
+    min-height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 6px 0px 0px;
+}
+
+.battlelog-container{
+    width: 200px;
+    height: 550px;
+    background-color: rgba(250,250,250, 0.5);
+    overflow-y: auto;
+}
+
+.right-side h2{
+    width: 200px;
+    background-color: rgba(250,250,250, 0.5);
+    margin: 0px;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: 700;
+    font-style: oblique;
+}
+
+.msg-container{
+    width: 200px;
+    height: 500px;
+    background-color: rgba(250,250,250, 0.5);
+    overflow-y: auto;
+}
+
+.msg{    
+    background-color: rgb(255, 228, 196, 0.5);
+    border-radius: 12px;
+    margin: 3px 3px;
+}
+
+.msg-body{
+    display: flex;
+    justify-content: space-between;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: black;
+}
+
+.timestamp{
+    font-size: x-small;
+    color: gray;
+    align-self: flex-end;
+}
+
+.chat-input{
+    width: 100%;
+}
+
+.chat-input mat-form-field{
+   width: 200px;
+}
+
+.card-container{
+    width: 90%;
+    max-height: 72px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: row;    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    transition: 0.3s;    
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* if he ended turn */
+.card-container img.special{
+    border: 3px greenyellow solid;
+}
+
+.card-container img{
+    max-height: 72px;
+    max-width: 72px;
+    aspect-ratio: 1 / 1; 
+    border: 3px red solid;
+    border-radius: 16px;
+    padding: 3px;
+    margin: 3px;
+}
+
+.text-container{
+    width: 100%;
+    height: 100%;
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;    
+}
+
+app-game-function{
+    position: absolute;
+    transform: translate(370px, 420px);
+    cursor: grab;
+}
+
+app-game-function:active {
+    cursor: grabbing;
+}
+
+app-character{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.character{
+    display: flex;
+    flex-direction: row;
+    border: 1px;
+    background-color: red;
+    z-index: 10;
+    transform: translateX(20px);
+}

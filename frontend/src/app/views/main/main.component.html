@@ -1,0 +1,89 @@
+<div class="scroll-container">
+    <app-navbar class="navbar">
+        <a href="#page-1">
+            <img src="../../../assets/logo1.png" alt="logo" width="60px" style="margin-bottom: -10px;">
+        </a>
+        <a mat-flat-button style="background-color: black;" [matMenuTriggerFor]="info">Info</a>
+        <!-- <a mat-flat-button style="background-color: black;" href="#page-3">Media</a> -->
+    </app-navbar>
+
+    <section class="scroll-page" id="page-1">
+        <img src="../../../assets/logo1.png" alt="logo">
+        <br>
+        <h1>  Welcomes You ! </h1>
+        <button mat-raised-button routerLink="/signin">Sign In</button>
+        <button mat-raised-button routerLink="/signup">Sign Up</button>        
+    </section>
+
+    <section class="scroll-page" id="page-2">
+        <div>
+            <h1>Game Center Layout</h1>
+        </div>
+        <div>
+            <img src="../../../assets/gamecenter.jpg">
+        </div>
+    </section>
+
+    <section class="scroll-page" id="page-3">
+        <div>
+            <h1>Game Room Layout</h1>
+        </div>
+        <div>
+            <img src="../../../assets/gameroom.jpg">
+        </div>
+    </section>
+
+    <section class="scroll-page" id="page-4">
+        <div>
+            <h1>Game Board Layout</h1>
+        </div>
+        <div>
+            <img src="../../../assets/game.jpg">
+        </div>
+    </section>
+
+    <section class="scroll-page" id="page-5">
+        <h1>Game Rule</h1>
+        <div class="content">
+
+            <h2>Jail</h2>
+            <p> If a player steps on "Jail" <strong>two</strong> times or step on "Go to Jail", then the player will be sent to jail for <strong>two</strong> turns.</p>
+            <br>
+
+            <h2>Properties</h2>
+            <ol>
+                <li>A player who lands on any unowned property may buy it from the bank at the listed purchase price.</li>
+                <li>The palyer <strong>can</strong> directly build an house/houses/hotel after purchase the land.</li>
+                <li>Player to pay rent to the owner of "Utility" based on the dice they rolled when they landed on the property.</li>
+                <li>"Utility" and "Railway" rent increase as the player owns more of them.</li>
+                <li>A player can sell their property back to bank but bank <strong>only</strong> will pay for the <strong>land value</strong> (without house).</li>
+            </ol>
+            <br>
+
+            <h2 style="color: red;">Bankruptcy</h2>
+            <p>A player is <strong style="color: red;">immeadiately</strong> declared as bankrupt if they have insufficient cash to pay rent/tax even though they have property can be sold.</p>
+            <p>The bankrupt player's properties will be released back to market.</p>
+            <br>
+
+            <h2 style="color: gold;">Win</h2>
+            <p>The last player survive in the game will be the winner.</p>
+        </div>
+    </section>
+</div>
+
+<mat-menu #info="matMenu" xPosition="before" yPosition="below" class="mat-menu">
+    <p>Interfaces</p>
+    <div>
+        <a mat-flat-button href="/#page-2" class="full-width">Game Center</a>
+    </div>
+    <div>
+        <a mat-flat-button href="/#page-3" class="full-width">Game Room</a>
+    </div>
+    <div>
+        <a mat-flat-button href="/#page-4" class="full-width">Game Board</a>
+    </div>
+    <hr>
+    <div>
+        <a mat-flat-button href="/#page-5" class="full-width">Game Rule</a>
+    </div>
+</mat-menu>

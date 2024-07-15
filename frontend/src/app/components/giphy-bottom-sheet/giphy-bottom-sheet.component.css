@@ -1,0 +1,19 @@
+.full-width{
+    width : 100%;
+}
+
+.giphys-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.giphys {   
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}

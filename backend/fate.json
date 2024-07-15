@@ -1,0 +1,25 @@
+{
+    "name" : "fate",
+    "card" : [
+        "You found a 'Free parking' card, but it is only valid at you land!",
+        "You pulled a 'Get out of jail free' card, but they don't charge for getting out either.",
+        "You drew a 'Go to jail' card, please report to jail yourself ASAP!",
+        "You received a 'Go directly to Go' card, please continue to roll dice to reach there later",
+        "You got a 'Advance to MBS' card, please continue to roll dice to reach there later",
+        "You landed on 'Income Tax Refund' but your income doesn't require you to pay tax, so no refund from IRAS.",
+        "You drew a 'Go Back 3 Spaces' card, but the game board function can only go forward now!",
+        "You received a 'Collect $200' card. That's it, just the card, not the money! HAHAHAHA!",
+        "You got a 'You Have Won First Prize in a Beauty Contest' card.",
+        "Today is your birthday. Happy birthday!",
+        "You drew a 'Collect $200' card, but too bad, I had no time to write the function to bank it in for you.",
+        "This card is just to make up the collection.",
+        "Good luck to you. May you win the game!",
+        "You drew a 'Pay Land Tax' card. Please calculate the related tax and find your way to pay it.",
+        "You received an 'Insurance Matures' card, but the payout is $0 due to inflation!",
+        "This is just to test the fate/chance.",
+        "Thank you for playing the game.",
+        "Sorry for wasting your time with this card.",
+        "You got a 'Steal a Property' card, but stealing is illegal, so it is confiscated.",
+        "You got a scam and lost $100. Just kidding..."
+    ]
+}

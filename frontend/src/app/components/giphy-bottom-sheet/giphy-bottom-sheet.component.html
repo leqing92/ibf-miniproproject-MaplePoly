@@ -1,0 +1,21 @@
+<form [formGroup]="form" (submit)="search()">
+    <mat-form-field class="full-width">
+        <mat-label>Search for GIPHYs</mat-label>
+        <input matInput type="text" formControlName="item">
+        <button mat-icon-button color="primary" type="submit" [disabled]="form.invalid" matSuffix>
+            <mat-icon>reply</mat-icon>
+        </button>        
+    </mat-form-field>
+</form>
+<div class="center">
+    <mat-spinner *ngIf="searching" color="accent"></mat-spinner>
+</div>
+
+<div *ngIf="giphys" class="giphys-container">    
+    <span *ngFor="let g of giphys; let i = index" class="giphys">
+        <img [src]="g" (click)="submit(i)">
+    </span>
+</div>
+<span *ngIf="!found">
+    <p style="color: red;">Not found</p>
+</span>

@@ -1,0 +1,13 @@
+:host {
+    display:block;
+    position: relative;
+    transition: top 0.5s, left 0.5s;
+    width: 15px;
+    height: 15px;
+}
+
+canvas{
+    width: 40x;
+    height: 40px;
+    z-index: 0;
+}

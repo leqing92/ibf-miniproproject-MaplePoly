@@ -1,0 +1,43 @@
+<!-- import {MatToolbarModule} from '@angular/material/toolbar'; -->
+<mat-toolbar class="navbar">
+    <div *ngIf="!isMainComponent()">
+        <a [routerLink]="['/']">
+            <img src="../../../assets/logo1.png" alt="logo" width="60px" style="margin-bottom: -10px;" >
+        </a>
+        <!-- <button mat-flat-button style="background-color: black; margin-top: -10px;" routerLink="/">Maplepoly</button> -->
+        <ng-content select=".audio-content"></ng-content>
+    </div>
+    <div *ngIf="isMainComponent()">
+        <ng-content></ng-content>
+    </div>
+    <div class="navbar-button">
+        <button mat-flat-button *ngIf="!isSponsorComponent()" routerLink="/sponsor" id="sponsor">Donate $0.50</button>   
+        <button mat-flat-button [routerLink]="['/gamecenter']" id="gamecenter" *ngIf="!inGame">Game Center</button>
+        <button mat-flat-button [routerLink]="['/game/', gid]" id="backtogame" *ngIf="inGame">Back to Game</button>
+        <button mat-flat-button *ngIf="!isAuthenticated" routerLink="/signin" id="login">Login</button>
+        <!-- <p id="username"> Hi, leqing </p> -->
+        <!-- <button mat-icon-button *ngIf="(authSvc.isAuthenticated() | async)" [matMenuTriggerFor]="user">-->
+        <button mat-icon-button *ngIf="isAuthenticated" [matMenuTriggerFor]="user">          
+            <mat-icon>person</mat-icon> 
+        </button>             
+    </div>
+</mat-toolbar>
+
+<!-- import {MatMenuModule} from '@angular/material/menu'; -->
+<mat-menu #user="matMenu" xPosition="before" yPosition="below" class="mat-menu">
+    <div *ngIf="isAuthenticated">
+        <p id="username">{{username}}</p>
+    </div>
+    <!-- <div>
+        <button mat-flat-button class="mat-menu-button">          
+            <mat-icon>edit_note</mat-icon>       
+            <span>Profile</span>
+        </button>
+    </div> -->
+    <div>        
+        <button mat-flat-button (click)="logout()" class="mat-menu-button" id="logout">
+            <mat-icon>logout</mat-icon> 
+            <span>Logout</span>
+        </button>
+    </div>    
+</mat-menu>

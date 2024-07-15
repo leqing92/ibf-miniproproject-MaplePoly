@@ -1,0 +1,162 @@
+.scroll-container {
+  position: relative;
+  width: auto;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;  
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+p{
+  color: white;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.scroll-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;  
+  scroll-snap-align: start;
+}
+
+#page-1 {
+  background-image: url("../../../assets/welcome.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: auto 40px;
+  display: block;
+  text-align: center;
+  min-width: 400px;
+  height: 100vh;
+}
+
+#page-1 img {
+  transform: translateY(50px);
+}
+
+#page-1 h1 {
+  font-size: 80px;
+  font-weight: 900;
+  color: tomato;
+  text-align: center;
+  text-wrap:nowrap;
+  margin-bottom: 32px;
+
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: lightblue;
+  
+  text-shadow: 
+  
+  var(--x-offset)
+  var(--y-offset)
+  0px
+  var(--background-color), 
+  
+  calc( var(--x-offset) - var(--stroke) )
+  calc( var(--y-offset) + var(--stroke) )
+  0px
+  var(--stroke-color);
+}
+
+#page-1 button {
+  margin: 8px 16px;
+  background-color: orange;
+  border: 4px whitesmoke solid;
+  color: white;
+  padding: 8px 64px;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+#page-1 button:hover {
+  filter: drop-shadow(0 0 10px red);
+  /* For browser compatibility */
+  -webkit-filter: drop-shadow(red 0 0 10px);
+  -moz-filter: drop-shadow(0 0 10px red);
+  -o-filter: drop-shadow(0 0 10px red);
+  -ms-filter: drop-shadow(0 0 10px red);
+  background-color: whitesmoke;
+  border: 4px orange solid;
+  color: orange;
+}
+
+#page-2,
+#page-3,
+#page-4,
+#page-5 {
+  background-image: url("../../../assets/booktime.jpg");  
+  background-size:auto;
+  background-position: auto 40px;
+}
+
+#page-2 img,
+#page-3 img,
+#page-4 img {
+  width: 920px;
+  max-height: 640px;
+  border-width: 8px;
+  border-color:black;
+  border-style: double;
+  border-radius: 32px;
+}
+
+#page-2 h1,
+#page-3 h1,
+#page-4 h1,
+#page-5 h1 {
+  font-size: 80px;
+  font-weight: 900;
+  color: yellow;
+  text-align: center;
+  text-wrap:nowrap;
+  margin-bottom: 32px;
+
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: black;
+  --stroke-color: gray;
+  
+  text-shadow: 
+  
+  var(--x-offset)
+  var(--y-offset)
+  0px
+  var(--background-color), 
+  
+  calc( var(--x-offset) - var(--stroke) )
+  calc( var(--y-offset) + var(--stroke) )
+  0px
+  var(--stroke-color);
+}
+
+.content{
+  padding: 8px;
+  border: 3px black solid;
+  backdrop-filter: blur(16px);
+}
+
+#page-5 h2{
+  text-decoration: underline;  
+}
+
+
+#page-5 p{
+  color: black;
+}
+

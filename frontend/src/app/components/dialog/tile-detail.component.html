@@ -1,0 +1,148 @@
+<div class="container" *ngIf="!isSpecial">
+    <div class="header" [style.background-color]="data.color ? data.color : 'grey'">
+        <p><strong>ID:</strong> {{data.id}}</p>
+        <h1>{{data.name}}</h1>
+      </div>
+      <div class="content">
+        <table>
+          <tr>
+            <td colspan="2">
+              <span class="rent">
+                <strong> Rent </strong> ${{data.rent[0]}}
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>With 1 house:</strong></td>
+            <td>${{data.rent[1]}}</td>
+          </tr>
+          <tr>
+            <td><strong>With 2 houses:</strong></td>
+            <td>${{data.rent[2]}}</td>
+          </tr>
+          <tr>
+            <td><strong>With 3 houses:</strong></td>
+            <td>${{data.rent[3]}}</td>
+          </tr>
+          <tr>
+            <td><strong>With Hotel:</strong></td>
+            <td>${{data.rent[4]}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span class="cost">Houses and hotel cost ${{data.build}} each</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr>
+            </td>
+          </tr>
+          <tr *ngIf="propertyStates[data.id].owner">
+            <td><strong>Owner:</strong></td>
+            <td>{{propertyStates[data.id].owner}}</td>
+          </tr>
+          <tr *ngIf="propertyStates[data.id].star">
+              <ng-container *ngIf="propertyStates[data.id].star == 4 ; else house">
+                <td>
+                  <strong>Hotel </strong>
+                </td>
+                <td>
+                  <span>
+                    <img src="../../../assets/hotel.jpg" alt="hotel">            
+                  </span>
+                </td>
+              </ng-container>
+              <ng-template #house>
+                <td>
+                  <strong>House:</strong>
+                </td>
+                <td>
+                  <span *ngFor="let h of getStars(propertyStates[data.id].star || 0)">
+                    <img src="../../../assets/house.png" alt="house">
+                  </span>
+                </td>
+              </ng-template>            
+          </tr>
+        </table>
+      </div>
+      <!-- <div class="action" mat-dialog-actions>
+        <button mat-button (click)="onClick()">Close</button>
+      </div> -->
+</div>
+
+<div class="container" *ngIf="isRail">
+  <div class="header" [style.background-color]="data.color ? data.color : 'grey'">
+      <p><strong>ID:</strong> {{data.id}}</p>
+      <h1>{{data.name}}</h1>
+    </div>
+    <div class="content">
+      <table>       
+        <td colspan="2">
+          <span class="rent">
+            <strong> Rent </strong>
+          </span>
+        </td>
+        <tr>
+          <td><strong>If 1 station is owned:</strong></td>
+          <td>${{data.rent[0]}}</td>
+        </tr>
+        <tr>
+          <td><strong>If 2 station are owned:</strong></td>
+          <td>${{data.rent[1]}}</td>
+        </tr>
+        <tr>
+          <td><strong>If 3 station are owned:</strong></td>
+          <td>${{data.rent[2]}}</td>
+        </tr>
+        <tr>
+          <td><strong>If 4 station are owned:</strong></td>
+          <td>${{data.rent[3]}}</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <hr>
+          </td>
+        </tr>    
+        <tr *ngIf="propertyStates[data.id].owner">
+          <td><strong>Owner:</strong></td>
+          <td>{{propertyStates[data.id].owner}}</td>
+        </tr>
+      </table>
+    </div>    
+</div>
+
+<div class="container" *ngIf="isUtility">
+  <div class="header" [style.background-color]="data.color ? data.color : 'grey'">
+      <p><strong>ID:</strong> {{data.id}}</p>
+      <h1>{{data.name}}</h1>
+    </div>
+    <div class="content">
+      <table>       
+        <td colspan="2">
+          <span class="rent">
+            <strong> Fee : ${{data.rent[0]}} </strong>
+          </span>
+        </td>
+        <tr>
+          <td colspan="2">
+            The rent shall be the <strong>fee times the number thrown on dice</strong> when you step on this.
+          </td>          
+        </tr>
+        <tr>
+          <td colspan="2">
+            If <strong>both </strong>"Utilities" are owned by the same owner, the rent is again <strong>doubled</strong>.
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <hr>
+          </td>
+        </tr>    
+        <tr *ngIf="propertyStates[data.id].owner">
+          <td><strong>Owner:</strong></td>
+          <td>{{propertyStates[data.id].owner}}</td>
+        </tr>
+      </table>
+    </div>    
+</div>

@@ -1,0 +1,48 @@
+<body>
+<app-navbar></app-navbar>
+    <div class="body">
+        <form [formGroup]="paymentElementForm" (submit)="pay()">
+            <div class="form-container">
+                <img src="../../../assets/background.jpg">
+                <h1>Sponsor the developer for SGD $0.50</h1>
+                <div class="form-row">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="name" formControlName="name" />
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" type="email" formControlName="email" />
+                    </mat-form-field>
+                </div>
+                <div class="form-row">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Address</mat-label>
+                        <input matInput placeholder="Address" formControlName="address" />
+                    </mat-form-field>
+                </div>
+                <div class="form-row">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>ZIP Code</mat-label>
+                        <input matInput placeholder="ZIP Code" formControlName="zipcode" />
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="city" formControlName="city" />
+                    </mat-form-field>
+                </div>
+            </div>
+            @if (elementsOptions.clientSecret) {
+              <ngx-stripe-elements
+                [stripe]="stripe"
+                [elementsOptions]="elementsOptions"
+              >
+                <ngx-stripe-payment [options]="paymentElementOptions" />
+              </ngx-stripe-elements>
+            }
+            <br>
+            <button mat-raised-button button="submit" id="pay">Sponsor</button>
+            <p></p>
+        </form>
+    </div>
+</body>

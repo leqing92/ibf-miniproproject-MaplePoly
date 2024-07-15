@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<body>
+    <div class="card-container">        
+        <mat-card class="form">
+            <mat-card-title>Sign In</mat-card-title>
+            <mat-card-content>
+                <form [formGroup]="form" (submit)="login()">
+                    <div>
+                        <mat-form-field class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="text" formControlName="email">
+                        <mat-hint *ngIf="form.get('email')?.hasError('required')"></mat-hint>
+                        <mat-hint *ngIf="form.get('email')?.hasError('email')">The login ID is your email</mat-hint>
+                        </mat-form-field>      
+                    </div>
+                    <div>
+                        <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+                            <mat-hint *ngIf="form.get('password')?.hasError('required')"></mat-hint>
+                            <button type="button" mat-icon-button matSuffix 
+                                    (click)="hidePassword = !hidePassword" 
+                                    matTooltip="{{ hidePassword ? 'Show password' : 'Hide Password' }}" >
+                                <mat-icon>{{ hidePassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <re-captcha (resolved)="resolved($event)" [siteKey]='SITEKEY' theme="dark"></re-captcha>
+                        <mat-hint *ngIf="form.get('recaptcha')?.hasError('required') && form.touched">Please complete the reCAPTCHA</mat-hint>
+                    </div>
+                    <br>
+                    <button type="submit" mat-raised-button [disabled]="form.invalid" class="full-width">Sign In</button>
+                    <hr>
+                    <mat-card-title>New to Monopoly?</mat-card-title>
+                    <button id="signup" mat-raised-button type="button" [routerLink]="['/signup']">Sign Up</button>
+                    <!-- <div>
+                        <button type="button" (click)="logout()">Logout</button>
+                        <button type="button" (click)="toWelcome()">To Welcome</button>
+                        <button type="button" (click)="toUserProfile()">To User Profile</button>
+                        <button type="button" (click)="toAdminProfile()">To Admin Profile</button>
+                    </div> -->
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</body>
+  

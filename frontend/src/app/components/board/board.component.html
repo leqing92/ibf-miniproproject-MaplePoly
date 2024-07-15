@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="board" id="board">
+
+    <div *ngFor="let tile of properties; let i = index;" 
+          [ngClass]="'tile ' + tile.classNames"
+          [style.gridColumn]="tile.cols" 
+          [style.gridRow]="tile.rows"
+          (click)="!isSpecialTile(i) && openDialog(i)"
+          [matTooltip]="!isSpecialTile(i) ? 'Click to view detail' : ''">
+
+      <div class="title" 
+        *ngIf="!isSpecialTile(i)" 
+        [style.backgroundColor]="tile.color">
+        <img src="../../../assets/visibility.png" alt="peek">
+
+        <span *ngIf="propertyStates?.at(i)?.star">
+
+          <span *ngIf="propertyStates?.at(i)?.star == 4 ; else house">
+            <img src="../../../assets/hotel.jpg" alt="hotel">            
+          </span>
+
+          <ng-template #house>
+            <span *ngFor="let h of getStars(propertyStates?.at(i)?.star || 0)">
+              <img src="../../../assets/house.png" alt="house">
+            </span>
+          </ng-template>
+        </span>
+
+        <span *ngIf="propertyStates?.at(i)?.owner" class="owner">
+          <img [src]="owner(i)" alt="img">
+        </span>
+
+      </div>
+
+      <div class="content">
+        <span>
+          {{ tile.name }}
+        </span>
+      </div>
+
+      <div class="footer">{{ tile.cost ? '$' + tile.cost : '' }}</div>
+    </div>
+
+    <!-- <div class="chance">
+      <p>Chance</p>
+    </div>
+
+    <div class="chest">
+      <p>Chest</p>
+    </div> -->
+
+    <ng-content></ng-content>    
+    
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="trade-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID No.</th>
+                <th>Property</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="playerState.properties.length > 0 ; else empty">
+            <tr *ngFor="let p of propertyList; let i = index">
+                <td>{{ p.id }}</td>
+                <td>{{ p.property }}</td>
+                <td>{{ p.price }}</td>
+                <td>
+                    <button mat-icon-button (click)="sell(p.id)" matTooltip="Sell"> 
+                        <mat-icon fontIcon="shopping_cart"></mat-icon>    
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <ng-template #empty>
+            <tr> There is not property </tr>
+        </ng-template>
+    </table>
+</div>

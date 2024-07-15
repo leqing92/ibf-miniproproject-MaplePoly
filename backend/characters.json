@@ -1,0 +1,384 @@
+[
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/greenslime.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/greenslimedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/greenslimesprite.png",
+        "name": "Green Slime",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/redslime.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/redslimedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/redslimesprite.png",
+        "name": "Red Slime",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/cokeslime.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/cokeslimedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/cokeslimesprite.png",
+        "name": "Coke Slime",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/goldenslime.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/goldenslimedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/goldenslimesprite.png",
+        "name": "Golden Slime",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/purpleslime.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/purpleslimedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/purpleslimesprite.png",
+        "name": "Purple Slime",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/silverslime.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/silverslimedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/silverslimesprite.png",
+        "name": "Silver Slime",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/blueslime.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/blueslimedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/blueslimesprite.png",
+        "name": "Blue Slime",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/orangemushroom.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/orangemushroomdie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/orangemushroomsprite.png",
+        "name": "Orange Mushroom",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 }                   
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/smartmanon.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/smartmanondie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/smartmanonsprite.png",
+        "name": "Smart Manon",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 },
+                    { "x": 1000, "y": 0 },
+                    { "x": 1250, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 },
+                    { "x": 1000, "y": 275 },
+                    { "x": 1250, "y": 275 },
+                    { "x": 1500, "y": 275 },
+                    { "x": 1750, "y": 275 }
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/yeti.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/yetidie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/yetisprite.png",
+        "name": "Yeti",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 },
+                    { "x": 1000, "y": 0 },
+                    { "x": 1250, "y": 0 },
+                    { "x": 1500, "y": 0 },
+                    { "x": 1750, "y": 0 },
+                    { "x": 2000, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 },
+                    { "x": 750, "y": 275 }                    
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 },
+                    { "x": 1000, "y": 550 },
+                    { "x": 1250, "y": 550 }
+                ]
+            }
+        }
+    }
+]

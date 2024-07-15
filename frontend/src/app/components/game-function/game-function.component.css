@@ -1,0 +1,214 @@
+.menu-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 100px auto;
+}
+
+.menu-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;  
+    border-radius: 50%;
+    background-color: black;
+    color: white;    
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 0 0 20px 5px;
+}
+
+.circle-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: none;    
+    transition: opacity 1s ease-in-out; 
+}
+
+.circle-menu.active {
+    display: block;
+}
+
+.circle-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    border: 2px solid;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.circle-button:hover {
+    box-shadow: 0 0 20px 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.btn1{
+    top: 0%;
+    left: 50%;
+    color: lime;  
+}
+
+.btn1:hover{
+    top: 0%;
+    left: 50%;
+    box-shadow: 0 0 20px 5px;
+    color: white;
+    background-color: lime;
+}
+
+.dice{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: black;
+    color: lime;
+    font-size: xx-large;
+    border: 2px solid;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px;     
+}
+
+.btn2 {
+    top: 20%;
+    left: 85%;
+    color: gold;
+}
+
+.btn3 {
+    
+    top: 50%;
+    left: 100%; 
+    color: pink;
+}
+
+.btn4 {
+    top: 80%;
+    left: 85%;
+    color: cyan;
+}
+
+.btn5 {
+    top: 100%;
+    left: 50%;
+}
+
+.btn5:hover {
+    top: 100%;
+    left: 50%;
+    color: black;
+}
+
+.btn6 {
+    top: 80%;
+    left: 15%;
+    color: red;
+    background-color: white;
+}
+
+.btn6:hover {
+    top: 80%;
+    left: 15%;
+    color: white;
+    background-color: red;
+}
+
+.btn7 {
+    top: 50%;
+    left: 0%;
+    color:brown;
+}
+
+.btn8 {
+    top: 20%;
+    left: 15%;
+    color: magenta;
+}
+
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.lines line {
+    stroke-width: 2;  
+}
+
+.lines .line1{
+   stroke: lime;
+}
+
+.line1.disabled {
+    stroke: white !important;
+    opacity: 0.5; 
+}
+
+.lines .line2{
+    stroke: gold;
+}
+
+.line2.disabled {
+    stroke: white !important; 
+    opacity: 0.5; 
+}
+
+.lines .line3{
+    stroke: pink;
+}
+
+.lines .line4{
+    stroke: cyan;
+}
+
+.lines .line5{
+    stroke: white;
+}
+
+.lines .line6{
+    stroke: red;
+    z-index: 1;
+}
+
+.line6.disabled {
+    stroke: white !important;
+    opacity: 0.5;
+}
+
+.lines .line7{
+    stroke: brown;
+}
+
+.lines .line8{
+    stroke: magenta;
+}
+
+.line8.disabled {
+    stroke: white !important;
+    opacity: 0.5;
+}
+
