@@ -380,5 +380,73 @@
                 ]
             }
         }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/ribbonpig.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/ribbonpigdie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/ribbonpigsprite.png",
+        "name": "Ribbon Pig",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 }                   
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 }
+                ]
+            }
+        }
+    },
+    {
+        "url": "https://day37lq.sgp1.digitaloceanspaces.com/pepe.png",
+        "dieUrl": "https://day37lq.sgp1.digitaloceanspaces.com/pepedie.png",
+        "spriteurl": "https://day37lq.sgp1.digitaloceanspaces.com/pepesprite.png",
+        "name": "Pepe",
+        "spriteWidth": 250,
+        "spriteHeight": 275,
+        "spritesheet": {
+            "idle": {
+                "coordinates": [
+                    { "x": 0, "y": 0 },
+                    { "x": 250, "y": 0 },
+                    { "x": 500, "y": 0 },
+                    { "x": 750, "y": 0 },
+                    { "x": 1000, "y": 0 },
+                    { "x": 1250, "y": 0 },
+                    { "x": 1500, "y": 0 }
+                ]
+            },
+            "run": {
+                "coordinates": [
+                    { "x": 0, "y": 275 },
+                    { "x": 250, "y": 275 },
+                    { "x": 500, "y": 275 }                
+                ]
+            },
+            "ko": {
+                "coordinates": [
+                    { "x": 0, "y": 550 },
+                    { "x": 250, "y": 550 },
+                    { "x": 500, "y": 550 },
+                    { "x": 750, "y": 550 }
+                ]
+            }
+        }
     }
 ]

@@ -3,6 +3,7 @@
   width: auto;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;  
 }
@@ -42,8 +43,25 @@ p{
   height: 100vh;
 }
 
-#page-1 img {
+.logo {
   transform: translateY(50px);
+}
+
+.gif-container{
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;  
+  animation: 10s linear infinite running slidein;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(60%);
+  }
+
+  to {
+    transform: translateX(-60%);
+  }
 }
 
 #page-1 h1 {
